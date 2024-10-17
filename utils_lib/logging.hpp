@@ -6,9 +6,6 @@
  * @version 0.1
  * @date 24/04/2024
  *
- * @copyright Ã‚Â© Copyright CERN 2018. All rights reserved. This software is released under a CERN proprietary software license.
- * Any permission to use it shall be granted in writing. Requests shall be addressed to CERN through mail-KT@cern.ch
- *
  */
 #ifndef LOGGING_HPP
 #define LOGGING_HPP
