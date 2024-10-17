@@ -8,9 +8,6 @@
  * @version 0.1
  * @date 05/02/2024
  * 
- * @copyright Ãƒâ€šÃ‚Â© Copyright CERN 2018. All rights reserved. This software is released under a CERN proprietary software license.
- * Any permission to use it shall be granted in writing. Requests shall be addressed to CERN through mail-KT@cern.ch
- * 
  */
 
 #include <stdio.h>
