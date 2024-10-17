@@ -34,30 +34,27 @@ int main() {
 
     while (1) {
     	if (processDataFlag) {
-
-			/* Data to send */
-			updateDataToSend();
-			/* Read Uart */
+		/* Data to send */
+		updateDataToSend();
+		/* Read Uart */
     		readUART(&uart);
     		/* Update logging */
-			loggingObj->addElement(goniometer_fw0_Y.yaw);
-			loggingObj->logData(0.1, 0.3, 10);
-			/* Logging and output handling */
-			if (!loggingObj->getStartLogging()) {
-				if (counter == divider) {
-					// Print the serialized data only when required
-					//std::cout << displacementReadAxis1_decimal << std::endl;
-					//std::cout << displacementReadAxis2_decimal << std::endl;
-					std::cout << GUIDataHandlerObj->serializeControlsData() << std::endl;
-					//std::cout << GUIDataHandlerObj->serializeGeneralSettingsData() << std::endl;
-					//std::cout << GUIDataHandlerObj->serializeControlSettingsData() << std::endl;
-					counter = 0;
-				} else {
-					counter++;
-				}
+		loggingObj->addElement(goniometer_fw0_Y.yaw);
+		loggingObj->logData(0.1, 0.3, 10);
+		/* Logging and output handling */
+		if (!loggingObj->getStartLogging()) {
+			if (counter == divider) {
+				// Print the serialized data only when required
+				std::cout << GUIDataHandlerObj->serializeControlsData() << std::endl;
+				std::cout << GUIDataHandlerObj->serializeGeneralSettingsData() << std::endl;
+				std::cout << GUIDataHandlerObj->serializeControlSettingsData() << std::endl;
+				counter = 0;
+			} else {
+				counter++;
 			}
-			/* Reset Flag */
-			processDataFlag = false;
+		}
+		/* Reset Flag */
+		processDataFlag = false;
     	}
 
     }
